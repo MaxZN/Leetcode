@@ -13,11 +13,13 @@ from typing import *
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
 
-        hashtable = dict()
-        for i,num in enumerate(nums):
-            if target - num in hashtable:
-                return [hashtable[target - num] , i]
-            hashtable[nums[i]] = i
+        Hashable = dict()
+        for id, num in enumerate(nums):
+            res = target - num
+            if res in Hashable:
+                return [Hashable[res], id]
+            else:
+                Hashable[num] = id
         return []
 
 # @lc code=end
