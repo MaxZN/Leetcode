@@ -16,3 +16,4 @@ ascii -> str:	chr(65) = 'A'
 
 bin(10) = '0b1010' 
 .zfill 字符串前置补零
+.count("1") 字符串计数
