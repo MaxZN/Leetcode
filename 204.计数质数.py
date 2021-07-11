@@ -12,6 +12,7 @@ class Solution:
             if is_primes[i-2]:
                 for j in range(i*i, n, i):
                     is_primes[j-2] = 0
+                    
         return sum(is_primes)
 
 
