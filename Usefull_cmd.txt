@@ -31,3 +31,6 @@ for i in set(a): print(i);print(a.count(i))
 str2=''.join(tlist) # list->str
 
 重复子字符串：return s in (s+s)[1:-1]，复制一倍
+
+for i in zip(a,b): print(i) >>>>>> (1,a),(2,b)
+>>>> dict(zip(a,b)) >>>>>{1:a, 2:b}
