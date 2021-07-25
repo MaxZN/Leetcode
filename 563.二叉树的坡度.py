@@ -17,6 +17,12 @@ class Solution:
         if root is None: return 0
         def search(head):
             if head is None: return 0
-            self.cnt += abs(head.right - head.left)
+            left_val = search(head.right)
+            right_val = search(head.left)
+            self.cnt += abs(left_val - \
+                right_val)
+            return head.val + right_val + left_val
+        search(root)
+        return self.cnt
 # @lc code=end
 
