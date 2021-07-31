@@ -11,19 +11,21 @@ class Solution:
             return 0
         if len(s) == 1:
             return 1
+        L = len(s)
 
-        def find_left(s, i):
-            tmp_str = s[i]
-            j = i - 1
-            while j >= 0 and s[j] not in tmp_str:
-                tmp_str += s[j]
-                j -= 1
-            return len(tmp_str)
-        
-        length = 0
-        for i in range(0, len(s)):
-            length = max(length, find_left(s, i))
-        return length
+        head = 0
+        tail = 1
+        # 设置初始窗口大小为1
+        cnt = 1
+        while tail<L:
+            while tail<L and s[tail] not in s[head:tail]:
+                tail += 1
+            cnt = max(cnt, tail-head)
+            if tail != L:
+                # 计算头指针的移动步数
+                head += s[head:tail].index(s[tail])+1
+        return cnt
+
 
 # @lc code=end
 
