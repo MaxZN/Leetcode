@@ -7,15 +7,17 @@
 # @lc code=start
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        def dfs(node,nums):
-            if len(node) == len(nums):
-                results.append(node[:])
-            
-            for i in nums:
-                if i not in node:
-                    node.append(i)
-                    dfs(node,nums)
-                    node.pop()
+        def dfs(wait_list,nums):
+            if len(wait_list) == len(nums):
+                results.append(wait_list[:])
+            for n in nums:
+                if n not in wait_list:
+                    wait_list.append(n)
+                    dfs(wait_list, nums)
+                    wait_list.pop()
+                else:
+                    pass
+
         root=[]
         results=[]
         dfs(root,nums)
